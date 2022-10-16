@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:leo_anime/components/app_bar.dart';
 
 class InfoPage extends StatefulWidget {
   final String id;
@@ -16,12 +17,10 @@ class _InfoPageState extends State<InfoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          widget.title,
-          style: const TextStyle(
-            letterSpacing: 4,
-          ),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(50),
+        child: CustomAppBar(
+          title: widget.title,
         ),
       ),
       backgroundColor: const Color.fromRGBO(0, 0, 0, 1),
@@ -34,8 +33,7 @@ class _InfoPageState extends State<InfoPage> {
             return ListView(
               children: [
                 Text(
-                  animeData['title']['english'] ??
-                      animeData['title']['romaji'],
+                  animeData['title']['english'] ?? animeData['title']['romaji'],
                   style: const TextStyle(
                     color: Color.fromRGBO(255, 255, 255, 1),
                   ),
