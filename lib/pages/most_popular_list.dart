@@ -13,29 +13,32 @@ class MostPopularList extends StatelessWidget {
       return SizedBox(
         height: 280,
         child: FutureBuilder(
-            future: dataManager.getPopular(),
-            builder: ((context, snapshot) {
-              if (snapshot.hasData) {
-                var data = snapshot.data!;
-                return ListView.builder(
+          future: dataManager.getPopular(),
+          builder: ((context, snapshot) {
+            if (snapshot.hasData) {
+              var data = snapshot.data!;
+              return ListView.builder(
                   shrinkWrap: true,
                   physics: const ClampingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                    itemCount: data.length,
-                    itemBuilder: ((context, index) {
-                      return DisplayLargeItem(
-                        data: data[index],
-                      );
-                    }));
-              } else {
-                return Column(
+                  itemCount: data.length,
+                  itemBuilder: ((context, index) {
+                    return DisplayLargeItem(
+                      data: data[index],
+                    );
+                  }));
+            } else {
+              return Center(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     CircularProgressIndicator(),
                   ],
-                );
-              }
-            })),
+                ),
+              );
+            }
+          }),
+        ),
       );
     }
   }

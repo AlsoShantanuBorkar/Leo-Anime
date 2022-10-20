@@ -3,9 +3,9 @@ import 'package:leo_anime/API/data_manager.dart';
 
 import '../components/display_large_item.dart';
 
-class RecentReleaseList extends StatelessWidget {
+class TrendingList extends StatelessWidget {
   final DataManager dataManager;
-  const RecentReleaseList({super.key, required this.dataManager});
+  const TrendingList({super.key, required this.dataManager});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class RecentReleaseList extends StatelessWidget {
       return SizedBox(
         height: 280,
         child: FutureBuilder(
-            future: dataManager.getRecent(),
+            future: dataManager.getTrending(),
             builder: ((context, snapshot) {
               if (snapshot.hasData) {
                 var data = snapshot.data!;

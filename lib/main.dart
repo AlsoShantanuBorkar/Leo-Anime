@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:leo_anime/API/data_manager.dart';
 import 'package:leo_anime/components/app_bar.dart';
 import 'package:leo_anime/pages/home.dart';
-import 'package:leo_anime/pages/recent_release_list.dart';
-
+import 'package:leo_anime/pages/search_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Leo Anime',
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        primaryColor: Colors.white,
       ),
       home: const MyHomePage(title: 'Leo Anime'),
     );
@@ -43,10 +42,9 @@ class _MyHomePageState extends State<MyHomePage> {
     switch (selectedIndex) {
       case 0:
         currentWidget = Home(dataManager: dataManager);
-
         break;
       case 1:
-       currentWidget = const Text("search");
+        currentWidget = SearchPage(dataManager: dataManager);
         break;
       case 2:
         currentWidget = const Text("Bookmarks");
@@ -54,13 +52,15 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     return Scaffold(
-        backgroundColor: const Color.fromRGBO(79, 79, 79, 1),
+        extendBodyBehindAppBar: true,
+        backgroundColor: const Color.fromRGBO(17, 20, 34, 1),
         appBar: PreferredSize(
             preferredSize: const Size.fromHeight(50),
             child: CustomAppBar(title: widget.title)),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: const Color.fromRGBO(31, 31, 31, 1),
-          unselectedItemColor: Colors.white,
+          backgroundColor: const Color.fromRGBO(27, 30, 47, 1),
+          unselectedItemColor: const Color.fromRGBO(66, 64, 253, 1),
+          selectedItemColor: Colors.white,
           currentIndex: selectedIndex,
           onTap: (newIndex) {
             setState(() {
