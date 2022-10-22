@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>640794025510-lcqm3a2anhum7e5c03osg32n7vh8q80p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.640794025510-lcqm3a2anhum7e5c03osg32n7vh8q80p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCas0a9mEHAQok97n-mGC3uY6ysQqESHRs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>640794025510</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.leoAnime</string>
+	<key>PROJECT_ID</key>
+	<string>leo-anime-auth</string>
+	<key>STORAGE_BUCKET</key>
+	<string>leo-anime-auth.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:640794025510:ios:b0cb88d99e23efd05190e7</string>
+</dict>
+</plist>

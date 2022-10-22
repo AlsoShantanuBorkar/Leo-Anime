@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "640794025510",
+    "project_id": "leo-anime-auth",
+    "storage_bucket": "leo-anime-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640794025510:android:0b7531e6f8d963265190e7",
+        "android_client_info": {
+          "package_name": "com.also_shantanu_borkar.leo_anime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640794025510-o4j49cg41u6qe2kjumu792el0s7tm9sd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANlx02I8sOI3s8E5Hg6UY04Vm-2QaLqeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640794025510-o4j49cg41u6qe2kjumu792el0s7tm9sd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
