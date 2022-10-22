@@ -28,11 +28,13 @@ class _SearchPageState extends State<SearchPage> {
       child: Scaffold(
         backgroundColor: const Color.fromRGBO(17, 20, 34, 1),
         extendBodyBehindAppBar: true,
+        // Search Bar
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           actions: const [
             Padding(
               padding: EdgeInsets.only(
+                top: 15,
                 right: 40,
               ),
               child: Icon(
@@ -42,7 +44,7 @@ class _SearchPageState extends State<SearchPage> {
             )
           ],
           elevation: 0,
-          toolbarHeight: 50.0,
+          toolbarHeight: 70.0,
           flexibleSpace: Container(
             padding: const EdgeInsets.only(top: 80.0),
             child: Container(
@@ -77,6 +79,8 @@ class _SearchPageState extends State<SearchPage> {
             ),
           ),
         ),
+
+        // Display matching Search Results
         body: FutureBuilder(
             future: widget.dataManager.searchAnime(animeName),
             builder: ((context, snapshot) {
