@@ -1,5 +1,4 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
 import 'package:leo_anime/pages/authentication/sign_in.dart';
 
 class Authenticate extends StatefulWidget {

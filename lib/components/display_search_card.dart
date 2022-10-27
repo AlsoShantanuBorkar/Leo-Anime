@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:leo_anime/pages/anime_info.dart';
 
+
 // ignore: must_be_immutable
 class DisplaySearchCard extends StatelessWidget {
-  // ignore: prefer_typing_uninitialized_variables
-  final data;
+
+  final dynamic data;
   String? title;
   DisplaySearchCard({super.key, required this.data});
   @override
@@ -27,13 +28,15 @@ class DisplaySearchCard extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15)),
                 child: InkWell(
                     onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  InfoPage(id: data.id, title: title!)),
+                            builder: (context) =>
+                                InfoPage(id: data.id, title: title!),
+                          ),
                         ),
                     child: Image(
                       fit: BoxFit.fitWidth,
@@ -42,7 +45,8 @@ class DisplaySearchCard extends StatelessWidget {
                     )),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 5),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                 child: SizedBox(
                   height: 40,
                   child: Text(
