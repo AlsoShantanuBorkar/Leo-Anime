@@ -5,10 +5,6 @@
 - Made using Flutter SDK.
 - Made using Consumet API.
 
-## Screenshots
-
-
-
 ## Run Locally
 
 *Make sure Flutter SDK is installed*
