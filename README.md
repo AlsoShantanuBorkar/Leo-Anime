@@ -2,8 +2,6 @@
 # Leo Anime
 
 - Application to Stream Anime and Manga to with a Ad Free Experience.
-- Made using Flutter SDK.
-- Made using Consumet API.
 
 ## Run Locally
 
