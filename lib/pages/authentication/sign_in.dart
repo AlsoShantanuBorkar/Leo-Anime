@@ -2,7 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:leo_anime/pages/authentication/sign_up.dart';
-import 'package:leo_anime/services/auth.dart';
+import 'package:leo_anime/services/authentication/auth.dart';
+import 'package:provider/provider.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -12,8 +13,6 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  final AuthService authInstance = AuthService();
-
   String email = '';
   String password = '';
   final _formKey1 = GlobalKey<FormState>();
@@ -22,6 +21,7 @@ class _SignInPageState extends State<SignInPage> {
 
   @override
   Widget build(BuildContext context) {
+    final auth = Provider.of<AuthService>(context);
     return Scaffold(
       backgroundColor: const Color.fromRGBO(17, 20, 34, 1),
       body: Center(
@@ -132,7 +132,7 @@ class _SignInPageState extends State<SignInPage> {
                             onPressed: (() async {
                               if (_formKey1.currentState!.validate()) {
                                 try {
-                                  await authInstance.signIn(email, password);
+                                  await auth.signIn(email, password);
                                   return;
                                 } catch (e) {
                                   return;
@@ -159,7 +159,10 @@ class _SignInPageState extends State<SignInPage> {
                               TextSpan(
                                 text: "Don't have a account? ",
                                 style: GoogleFonts.roboto(
-                                    color: Colors.white, fontSize: 15,fontWeight: FontWeight.w400,letterSpacing: .5),
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    letterSpacing: .5),
                               ),
                               TextSpan(
                                 recognizer: TapGestureRecognizer()
@@ -167,7 +170,8 @@ class _SignInPageState extends State<SignInPage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const SignUpPage(),
+                                        builder: (context) =>
+                                            const SignUpPage(),
                                       ),
                                     );
                                   },
@@ -187,13 +191,16 @@ class _SignInPageState extends State<SignInPage> {
                               TextSpan(
                                 text: "\n\nSign In as a ",
                                 style: GoogleFonts.roboto(
-                                    color: Colors.white, fontSize: 15,fontWeight: FontWeight.w400,letterSpacing: .5),
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    letterSpacing: .5),
                               ),
                               TextSpan(
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () async {
                                     try {
-                                      await authInstance.signInAnonymously();
+                                      await auth.signInAnonymously();
                                       return;
                                     } catch (e) {
                                       return;

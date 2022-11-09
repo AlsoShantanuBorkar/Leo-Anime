@@ -3,11 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:leo_anime/pages/anime_info.dart';
 
 // ignore: must_be_immutable
-class DisplayLargeItem extends StatelessWidget {
+class DisplayCard extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   final data;
   String? title;
-  DisplayLargeItem({super.key, required this.data});
+  DisplayCard({super.key, required this.data});
   @override
   Widget build(BuildContext context) {
     title = data.title.english;

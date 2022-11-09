@@ -1,7 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:leo_anime/services/auth.dart';
+import 'package:leo_anime/services/authentication/auth.dart';
+import 'package:provider/provider.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -11,8 +12,7 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  final AuthService authInstance = AuthService();
-
+  
   String email = '';
   String password = '';
   final _formKey2 = GlobalKey<FormState>();
@@ -21,6 +21,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
+    final auth = Provider.of<AuthService>(context);
     return Scaffold(
       backgroundColor: const Color.fromRGBO(17, 20, 34, 1),
       body: Center(
@@ -131,7 +132,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             onPressed: (() async {
                               if (_formKey2.currentState!.validate()) {
                                 try {
-                                  await authInstance.signUp(email, password);
+                                  await auth.signUp(email, password);
                                   return;
                                 } catch (e) {
                                   return;
@@ -193,7 +194,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () async {
                                     try {
-                                      await authInstance.signInAnonymously();
+                                      await auth.signInAnonymously();
                                       return;
                                     } catch (e) {
                                       return;

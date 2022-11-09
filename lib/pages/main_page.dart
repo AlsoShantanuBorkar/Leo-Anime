@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:leo_anime/API/data_manager.dart';
-import 'package:leo_anime/components/app_bar.dart';
+import 'package:leo_anime/services/API/data_manager.dart';
+import 'package:leo_anime/pages/bookmark_body.dart';
+import 'package:leo_anime/widgets/app_bar.dart';
 import 'package:leo_anime/pages/home_body.dart';
-import 'package:leo_anime/pages/search_page.dart';
-
+import 'package:leo_anime/pages/search_body.dart';
 
 // HomePage consisting of Home, Search and Bookmarks.
 class MyHomePage extends StatefulWidget {
@@ -22,7 +22,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     Widget? currentWidget;
 
-
     // Change Scaffold Body according to the Selected Index
     switch (selectedIndex) {
       case 0:
@@ -32,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
         currentWidget = SearchPage(dataManager: dataManager);
         break;
       case 2:
-        currentWidget = const Text("Bookmarks");
+        currentWidget = const BookmarkBody();
         break;
     }
 

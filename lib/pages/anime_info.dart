@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
-import 'package:leo_anime/components/scrollable_app_bar.dart';
+import 'package:leo_anime/widgets/scrollable_app_bar.dart';
 
 class InfoPage extends StatefulWidget {
   String? description;

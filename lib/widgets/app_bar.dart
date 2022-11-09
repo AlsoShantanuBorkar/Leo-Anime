@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:leo_anime/services/auth.dart';
+import 'package:provider/provider.dart';
+import '../services/authentication/auth.dart';
 
 // Custom App Bar for HomePage,Search Page , Bookmarks 
 class CustomAppBar extends StatelessWidget {
@@ -8,7 +9,7 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AuthService auth = AuthService();
+    final auth = Provider.of<AuthService>(context);
 
     return AppBar(
       actions: [

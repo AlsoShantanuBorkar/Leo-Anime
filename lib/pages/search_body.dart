@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:leo_anime/API/data_manager.dart';
-import 'package:leo_anime/components/display_search_card.dart';
+import 'package:leo_anime/services/API/data_manager.dart';
+import 'package:leo_anime/widgets/display_search_card.dart';
 
 class SearchPage extends StatefulWidget {
   final DataManager dataManager;

@@ -1,6 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:leo_anime/pages/authentication/authenticate.dart';
-import 'package:leo_anime/pages/authentication/user_model.dart';
 import 'package:leo_anime/pages/main_page.dart';
 import 'package:provider/provider.dart';
 
@@ -10,7 +10,7 @@ class AuthWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AppUser? userData = Provider.of<AppUser?>(context);
+    final User? userData = Provider.of<User?>(context);
 
 
     // Redirect user to HomePage or Authenticate

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:leo_anime/API/data_manager.dart';
-import 'package:leo_anime/components/most_popular_list.dart';
-import 'package:leo_anime/components/recent_release_list.dart';
-import 'package:leo_anime/components/trending_list.dart';
+import 'package:leo_anime/services/API/data_manager.dart';
+import 'package:leo_anime/widgets/most_popular_list.dart';
+import 'package:leo_anime/widgets/recent_release_list.dart';
+import 'package:leo_anime/widgets/trending_list.dart';
 
 class HomeBody extends StatelessWidget {
   final DataManager dataManager;
@@ -20,10 +20,7 @@ class HomeBody extends StatelessWidget {
             child: Text(
               "Recent Releases",
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 25,
-                letterSpacing: 2
-              ),
+                  color: Colors.white, fontSize: 25, letterSpacing: 2),
             ),
           ),
           RecentReleaseList(
@@ -34,10 +31,7 @@ class HomeBody extends StatelessWidget {
             child: Text(
               "Most Popular",
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 25,
-                letterSpacing: 2
-              ),
+                  color: Colors.white, fontSize: 25, letterSpacing: 2),
             ),
           ),
           MostPopularList(
@@ -48,16 +42,12 @@ class HomeBody extends StatelessWidget {
             child: Text(
               "Trending",
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 25,
-                letterSpacing: 2
-              ),
+                  color: Colors.white, fontSize: 25, letterSpacing: 2),
             ),
           ),
           TrendingList(
             dataManager: dataManager,
           ),
-          
         ],
       ),
     );
